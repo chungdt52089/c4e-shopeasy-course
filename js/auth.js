@@ -57,7 +57,7 @@ if (registerForm) {
       return;
     }
 
-    users.push({ name, email, password });
+    users.push({ name, email, password }); // Lưu user mới vào mảng
     saveUsers(users);
     alert("Đăng ký thành công! Mời bạn đăng nhập.");
     location.href = "login.html";
@@ -73,10 +73,13 @@ if (loginForm) {
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
-    const user = getUsers().find((u) => u.email === email && u.password === password);
+    const user = getUsers().find(
+      (u) => u.email === email && u.password === password,
+    );
 
     if (!user) {
-      document.getElementById("message").textContent = "Sai email hoặc mật khẩu";
+      document.getElementById("message").textContent =
+        "Sai email hoặc mật khẩu";
       return;
     }
 
