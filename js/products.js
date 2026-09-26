@@ -13,6 +13,7 @@ function productCard(product) {
   `;
 }
 
+// Hàm vẽ sản phẩm trên container
 function renderProducts(list, containerId) {
   const box = document.getElementById(containerId);
   if (!box) return;
@@ -50,7 +51,7 @@ function filterProducts() {
 }
 
 if (searchInput) {
-  const q = new URLSearchParams(location.search).get("q");
+  const q = new URLSearchParams(location.search).get("q"); // Nhận value từ index.html?q=...
   if (q) searchInput.value = q;
 
   searchInput.addEventListener("input", filterProducts);

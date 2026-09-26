@@ -29,7 +29,7 @@ function addToCart(productId, qty) {
   if (item) {
     item.qty += qty; // đã có trong giỏ -> cộng thêm số lượng
   } else {
-    cart.push({ productId, qty }); // chưa có -> thêm mới
+    cart.push({ productId, qty }); // chưa có -> thêm mới theo format { productId, qty }
   }
   saveCart(cart);
   alert("Đã thêm vào giỏ hàng!");
@@ -130,7 +130,7 @@ function checkout() {
     email: user.email,
     items: cart,
     total: total,
-    date: new Date().toLocaleDateString("vi-VN")
+    date: new Date().toLocaleDateString("vi-VN"),
   });
   localStorage.setItem("orders", JSON.stringify(orders));
   saveCart([]); // đặt xong thì làm trống giỏ

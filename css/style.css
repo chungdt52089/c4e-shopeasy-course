@@ -17,6 +17,9 @@ body {
   font-family: Arial, sans-serif;
   color: var(--dark);
   line-height: 1.5;
+  min-height: 100vh; /* body cao ít nhất bằng màn hình */
+  display: flex; /* xếp header, main, footer bằng flex */
+  flex-direction: column; /* theo chiều dọc */
 }
 
 img {
@@ -267,6 +270,7 @@ th {
   color: #aaa;
   text-align: center;
   padding: 20px;
+  margin-top: auto; /* đẩy footer xuống đáy */
 }
 
 /* ===== 11. Giỏ hàng ===== */
